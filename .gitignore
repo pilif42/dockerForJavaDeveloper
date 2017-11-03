@@ -1,0 +1,8 @@
+*.class
+*.gradle
+*.iml
+*.pem
+*.p12
+.idea
+target/
+build/
