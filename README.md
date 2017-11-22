@@ -57,5 +57,10 @@ Built a Docker Image using Java:
                         - the curl command now gives a 204.
 
     - package and run Java Application using Docker Maven Plugin
+        - used https://github.com/spotify/dockerfile-maven to add the dockerfile-maven-plugin plugin section correctly to my pom.xml
+        - uped the version to 1.0.2-SNAPSHOT
+        - cd /dockerForJavaDeveloper/demo
+        - mvn clean deploy
+            - TODO this errors at the mo.
         - TODO start at https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch03-build-image.adoc#package-and-run-java-application-as-docker-image
-        
+

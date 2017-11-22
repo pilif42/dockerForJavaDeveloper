@@ -1,3 +1,5 @@
 FROM openjdk:latest
-COPY target/demo-0.0.1-SNAPSHOT.jar /usr/src/demo-0.0.1-SNAPSHOT.jar
-CMD java -jar /usr/src/demo-0.0.1-SNAPSHOT.jar
+MAINTAINER Philippe Brossier <brossierp@gmail.com>
+ARG JAR_FILE
+COPY target/${JAR_FILE} /usr/src/demoService.jar
+CMD java -jar /usr/src/demoService.jar
