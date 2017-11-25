@@ -92,10 +92,10 @@ Built a Docker Image using Java:
                         - add the correct <distributionManagement> section: use again the 'Set Me Up' link in the home of the Artifactory web UI.
                 - cd /dockerForJavaDeveloper/demo
                 - mvn clean deploy
-
-            - TODO: verify that my artifacts end up in http://localhost:8081/artifactory/webapp/#/home
-                    - the application .jar
-            - TODO: verify where the built image ends up brossierp/demo-java:1.0.2-SNAPSHOT
+                - verified that demo-1.0.2-....jar ends up in libs-snapshot-local at http://localhost:8081/artifactory/webapp/#/home
+                - TODO: The push refers to a repository [docker.io/brossierp/demo-java]
+                - TODO: denied: requested access to the resource is denied
+                - TODO: verify where the built image ends up brossierp/demo-java:1.0.2-SNAPSHOT
 
         - TODO start at https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch03-build-image.adoc#package-and-run-java-application-as-docker-image
 
