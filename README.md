@@ -94,7 +94,9 @@ Built a Docker Image using Java:
                 - mvn clean deploy
                 - verified that demo-1.0.2-....jar ends up in libs-snapshot-local at http://localhost:8081/artifactory/webapp/#/home
                 - TODO mvn clean install does produce the docker image but mvn clean deploy fails
-                - TODO set up my docker-local repo correctly with: https://www.jfrog.com/confluence/display/RTF/Docker+Registry
+                - TODO set up my docker-local repo correctly with:
+                        - TODO log in webUI --> artifacts --> select docker-local and set me up
+                        - TODO https://www.jfrog.com/confluence/display/RTF/Docker+Registry
                 - TODO go back to the pom.xml: see zzz
                 - TODO: in settings.xml of Maven: add sth along the lines of
                 TODO <server>
