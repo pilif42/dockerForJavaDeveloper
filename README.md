@@ -93,9 +93,15 @@ Built a Docker Image using Java:
                 - cd /dockerForJavaDeveloper/demo
                 - mvn clean deploy
                 - verified that demo-1.0.2-....jar ends up in libs-snapshot-local at http://localhost:8081/artifactory/webapp/#/home
-                - TODO: The push refers to a repository [docker.io/brossierp/demo-java]
-                - TODO: denied: requested access to the resource is denied
-                - TODO: verify where the built image ends up brossierp/demo-java:1.0.2-SNAPSHOT
+                - TODO mvn clean install does produce the docker image but mvn clean deploy fails
+                - TODO set up my docker-local repo correctly with: https://www.jfrog.com/confluence/display/RTF/Docker+Registry
+                - TODO go back to the pom.xml: see zzz
+                - TODO: in settings.xml of Maven: add sth along the lines of
+                TODO <server>
+                TODO   <id>registry.cn-hangzhou.aliyuncs.com</id>
+                TODO    <username>hi34221235@aliyun.com</username>
+                TODO    <password>123456</password>
+                TODO  </server>
 
         - TODO start at https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch03-build-image.adoc#package-and-run-java-application-as-docker-image
 
