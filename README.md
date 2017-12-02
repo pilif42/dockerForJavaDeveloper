@@ -93,6 +93,15 @@ Built a Docker Image using Java:
                 - cd /dockerForJavaDeveloper/demo
                 - mvn clean deploy
                 - verified that demo-1.0.2-....jar ends up in libs-snapshot-local at http://localhost:8081/artifactory/webapp/#/home
+                - manual steps taken as the mvn deploy was failing to push to Docker Cloud. I wanted to prove that manually, it does work.:
+                        - cd /dockerForJavaDeveloper/demo
+                        - mvn clean install
+                        - docker images | grep demo
+                                - I can see: brossierp/demo-java 1.0.2-SNAPSHOT ... 2 minutes ago
+                        - docker login with brossierp
+                        - docker push brossierp/demo-java:1.0.2-SNAPSHOT
+                        - log into https://cloud.docker.com/ with brossierp
+                            - I can see my new tag 1.0.2-SNAPSHOT under repo brossierp/demo-java
                 - TODO mvn clean install does produce the docker image but mvn clean deploy fails
                 - TODO set up my docker-local repo correctly with:
                         - TODO log in webUI --> artifacts --> select docker-local and set me up
