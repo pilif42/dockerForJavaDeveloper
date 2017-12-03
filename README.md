@@ -102,7 +102,8 @@ Built a Docker Image using Java:
                         - docker push brossierp/demo-java:1.0.2-SNAPSHOT
                         - log into https://cloud.docker.com/ with brossierp
                             - I can see my new tag 1.0.2-SNAPSHOT under repo brossierp/demo-java
-                - TODO mvn clean install does produce the docker image but mvn clean deploy fails
+                - TODO mvn clean deploy still fails:
+                        - TODO Could not push image: denied: requested access to the resource is denied
                 - TODO set up my docker-local repo correctly with:
                         - TODO log in webUI --> artifacts --> select docker-local and set me up
                         - TODO https://www.jfrog.com/confluence/display/RTF/Docker+Registry

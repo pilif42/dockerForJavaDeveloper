@@ -74,11 +74,11 @@
 						<goals>
 							<goal>push</goal>
 						</goals>
-						<!--zzz <configuration>
-							<repository>registry.cn-hangzhou.aliyuncs.com/veryqy/discovery</repository>
+						<configuration>
+							<repository>brossierp/demo-java</repository>
 							<tag>${project.version}</tag>
 							<useMavenSettingsForAuth>true</useMavenSettingsForAuth>
-						</configuration> -->
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
