@@ -85,15 +85,27 @@ Built a Docker Image using Java:
                         - docker stop artifactory
                         - docker rm artifactory
         - deploy with Maven:
-                - edit settings.xml under /Users/philippebrossier/.m2 to use the correct credentials for this Artifactory
+                - edit settings.xml under /Users/philippebrossier/.m2 to use the correct credentials for this Artifactory and for Docker Cloud
+                        <server>
+                            <id>snapshots</id>
+                            <username>xxx</username>
+                            <password>yyy</password>
+                        </server>
+                        <server>
+                            <id>docker.io</id>
+                            <username>dockerCloudUsername</username>
+                            <password>password</password>
+                        </server>
                 - edit settings.xml under /devtools/apache-maven-3.5.0/conf/:
                         - add the correct <profile> section: use the 'Set Me Up' link in the home of the Artifactory web UI to generate what is required.
                 - edit your project pom.xml:
                         - add the correct <distributionManagement> section: use again the 'Set Me Up' link in the home of the Artifactory web UI.
                 - cd /dockerForJavaDeveloper/demo
                 - mvn clean deploy
-                - verified that demo-1.0.2-....jar ends up in libs-snapshot-local at http://localhost:8081/artifactory/webapp/#/home
-                - manual steps taken as the mvn deploy was failing to push to Docker Cloud. I wanted to prove that manually, it does work.:
+                - verified that:
+                        - demo-1.0.2-....jar ends up in libs-snapshot-local at http://localhost:8081/artifactory/webapp/#/home
+                        - a new Docker image ends up in Docker Cloud at docker/brossierp/demo-java/general
+                - manual steps taken as the mvn deploy was failing to push to Docker Cloud (I was missing the docker.io entry in philippebrossier/.m2/settings.xml). I wanted to prove that manually, it does work.:
                         - cd /dockerForJavaDeveloper/demo
                         - mvn clean install
                         - docker images | grep demo
@@ -102,18 +114,6 @@ Built a Docker Image using Java:
                         - docker push brossierp/demo-java:1.0.2-SNAPSHOT
                         - log into https://cloud.docker.com/ with brossierp
                             - I can see my new tag 1.0.2-SNAPSHOT under repo brossierp/demo-java
-                - TODO mvn clean deploy still fails:
-                        - TODO Could not push image: denied: requested access to the resource is denied
-                - TODO set up my docker-local repo correctly with:
-                        - TODO log in webUI --> artifacts --> select docker-local and set me up
-                        - TODO https://www.jfrog.com/confluence/display/RTF/Docker+Registry
-                - TODO go back to the pom.xml: see zzz
-                - TODO: in settings.xml of Maven: add sth along the lines of
-                TODO <server>
-                TODO   <id>registry.cn-hangzhou.aliyuncs.com</id>
-                TODO    <username>hi34221235@aliyun.com</username>
-                TODO    <password>123456</password>
-                TODO  </server>
 
         - TODO start at https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch03-build-image.adoc#package-and-run-java-application-as-docker-image
 
