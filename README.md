@@ -115,5 +115,7 @@ Built a Docker Image using Java:
                         - log into https://cloud.docker.com/ with brossierp
                             - I can see my new tag 1.0.2-SNAPSHOT under repo brossierp/demo-java
 
-        - TODO start at https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch03-build-image.adoc#package-and-run-java-application-as-docker-image
+
+- TODO start again at https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch04-run-container.adoc
+
 
